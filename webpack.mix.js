@@ -44,8 +44,8 @@ mix
       config
     )
   )
-  .js('resources/js/main.js', 'public/js')
-  .sass('resources/scss/main.scss', 'public/css')
+  .js('resources/js/clients.js', 'public/js')
+  .sass('resources/scss/clients.scss', 'public/css')
   .extract([
     'vue',
     'vuex',

@@ -1,17 +1,15 @@
 import Vue from 'vue'
-//import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure you are using css-loader
-import Vuetify from 'vuetify'
-import VeeValidate from 'vee-validate'
 // Docs: https://github.com/axios/axios
 import axios from 'axios'
-//import Admin from '@/components/layout/Admin'
-//import router from '@/router/admin'
-//import store from '@/store/admin'
+// Docs: https://baianat.github.io/vee-validate/
+import VeeValidate from 'vee-validate'
+import Clients from '@/components/layout/Clients.vue'
+import router from '@/router'
+import components from '@/components'
+import store from '@/store'
 
-Vue.use(Vuetify, {
-  iconfont: 'md'
-}) 
-Vue.use(VeeValidate)
+Vue.use(components)
+//Vue.use(VeeValidate)
 
 Vue.config.productionTip = false
 window.axios = axios
@@ -32,9 +30,12 @@ if (token) {
 }
 
 new Vue({
-  el: '#admin',
+  el: '#clients',
+  data: {
+    showModal: false
+  },
   router,
   store,
-  components: { Admin },
-  template: '<Admin/>'
+  components: { Clients },
+  template: '<Clients/>'
 })
